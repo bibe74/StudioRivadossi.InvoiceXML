@@ -1,0 +1,53 @@
+CREATE TABLE [XMLFatture].[Staging_FatturaElettronicaBody]
+(
+[PKStaging_FatturaElettronicaBody] [bigint] NOT NULL CONSTRAINT [DFT_XMLFatture_Staging_FatturaElettronicaBody] DEFAULT (NEXT VALUE FOR [XMLFatture].[seq_Staging_FatturaElettronicaBody]),
+[PKStaging_FatturaElettronicaHeader] [bigint] NOT NULL,
+[DatiGenerali_DatiGeneraliDocumento_TipoDocumento] [char] (4) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiGeneraliDocumento_Divisa] [char] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiGeneraliDocumento_Data] [date] NULL,
+[DatiGenerali_DatiGeneraliDocumento_Numero] [nvarchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiGeneraliDocumento_DatiRitenuta_TipoRitenuta] [char] (4) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiGeneraliDocumento_DatiRitenuta_ImportoRitenuta] [decimal] (14, 2) NULL,
+[DatiGenerali_DatiGeneraliDocumento_DatiRitenuta_AliquotaRitenuta] [decimal] (5, 2) NULL,
+[DatiGenerali_DatiGeneraliDocumento_DatiRitenuta_CausalePagamento] [char] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiGeneraliDocumento_DatiBollo_BolloVirtuale] [char] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiGeneraliDocumento_DatiBollo_ImportoBollo] [decimal] (14, 2) NULL,
+[DatiGenerali_DatiGeneraliDocumento_ImportoTotaleDocumento] [decimal] (14, 2) NULL,
+[DatiGenerali_DatiGeneraliDocumento_Arrotondamento] [decimal] (14, 2) NULL,
+[DatiGenerali_DatiGeneraliDocumento_Art73] [char] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_IdFiscaleIVA_IdPaese] [char] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_IdFiscaleIVA_IdCodice] [nvarchar] (28) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_CodiceFiscale] [nvarchar] (16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_Anagrafica_Denominazione] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_Anagrafica_Nome] [nvarchar] (60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_Anagrafica_Cognome] [nvarchar] (60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_Anagrafica_Titolo] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_Anagrafica_CodEORI] [nvarchar] (17) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DatiAnagraficiVettore_NumeroLicenzaGuida] [nvarchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_MezzoTrasporto] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_CausaleTrasporto] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_NumeroColli] [int] NULL,
+[DatiGenerali_DatiTrasporto_Descrizione] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_UnitaMisuraPeso] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_PesoLordo] [decimal] (6, 2) NULL,
+[DatiGenerali_DatiTrasporto_PesoNetto] [decimal] (6, 2) NULL,
+[DatiGenerali_DatiTrasporto_DataOraRitiro] [datetime] NULL,
+[DatiGenerali_DatiTrasporto_DataInizioTrasporto] [date] NULL,
+[DatiGenerali_DatiTrasporto_TipoResa] [char] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_IndirizzoResa_Indirizzo] [nvarchar] (60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_IndirizzoResa_NumeroCivico] [nvarchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_IndirizzoResa_CAP] [char] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_IndirizzoResa_Comune] [nvarchar] (60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_IndirizzoResa_Provincia] [char] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_IndirizzoResa_Nazione] [char] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_DatiTrasporto_DataOraConsegna] [datetime] NULL,
+[DatiGenerali_FatturaPrincipale_NumeroFatturaPrincipale] [nvarchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DatiGenerali_FatturaPrincipale_DataFatturaPrincipale] [date] NULL,
+[DatiVeicoli_Data] [date] NULL,
+[DatiVeicoli_TotalePercorso] [nvarchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [XMLFatture].[Staging_FatturaElettronicaBody] ADD CONSTRAINT [PK_XMLFatture_Staging_FatturaElettronicaBody] PRIMARY KEY CLUSTERED  ([PKStaging_FatturaElettronicaBody]) ON [PRIMARY]
+GO
+ALTER TABLE [XMLFatture].[Staging_FatturaElettronicaBody] ADD CONSTRAINT [FK_XMLFatture_Staging_FatturaElettronicaBody_PKStaging_FatturaElettronicaHeader] FOREIGN KEY ([PKStaging_FatturaElettronicaHeader]) REFERENCES [XMLFatture].[Staging_FatturaElettronicaHeader] ([PKStaging_FatturaElettronicaHeader])
+GO

@@ -1,0 +1,7 @@
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('    ', N'')
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('RT01', N'ritenuta d''acconto (ritenuta persone fisiche)')
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('RT02', N'ritenuta d''acconto (ritenuta persone giuridiche)')
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('RT03', N'contributo INPS')
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('RT04', N'contributo ENASARCO')
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('RT05', N'contributo ENPAM')
+INSERT INTO [XMLCodifiche].[TipoRitenuta] ([IDTipoRitenuta], [TipoRitenuta]) VALUES ('RT06', N'altro contributo previdenziale')

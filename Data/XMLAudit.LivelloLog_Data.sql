@@ -1,0 +1,5 @@
+INSERT INTO [XMLAudit].[LivelloLog] ([PKLivelloLog], [Codice], [Descrizione]) VALUES (0, N'T', N'Trace')
+INSERT INTO [XMLAudit].[LivelloLog] ([PKLivelloLog], [Codice], [Descrizione]) VALUES (1, N'D', N'Debug')
+INSERT INTO [XMLAudit].[LivelloLog] ([PKLivelloLog], [Codice], [Descrizione]) VALUES (2, N'I', N'Info')
+INSERT INTO [XMLAudit].[LivelloLog] ([PKLivelloLog], [Codice], [Descrizione]) VALUES (3, N'W', N'Warning')
+INSERT INTO [XMLAudit].[LivelloLog] ([PKLivelloLog], [Codice], [Descrizione]) VALUES (4, N'W', N'Error')

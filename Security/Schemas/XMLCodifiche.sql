@@ -1,0 +1,3 @@
+CREATE SCHEMA [XMLCodifiche]
+AUTHORIZATION [dbo]
+GO

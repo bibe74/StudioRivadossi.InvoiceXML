@@ -1,0 +1,5 @@
+INSERT INTO [XMLCodifiche].[TipoCessionePrestazione] ([IDTipoCessionePrestazione], [TipoCessionePrestazione]) VALUES ('  ', N'')
+INSERT INTO [XMLCodifiche].[TipoCessionePrestazione] ([IDTipoCessionePrestazione], [TipoCessionePrestazione]) VALUES ('AB', N'abbuono')
+INSERT INTO [XMLCodifiche].[TipoCessionePrestazione] ([IDTipoCessionePrestazione], [TipoCessionePrestazione]) VALUES ('AC', N'spesa accessoria')
+INSERT INTO [XMLCodifiche].[TipoCessionePrestazione] ([IDTipoCessionePrestazione], [TipoCessionePrestazione]) VALUES ('PR', N'premio')
+INSERT INTO [XMLCodifiche].[TipoCessionePrestazione] ([IDTipoCessionePrestazione], [TipoCessionePrestazione]) VALUES ('SC', N'sconto')
