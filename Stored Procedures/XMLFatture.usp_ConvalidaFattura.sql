@@ -2,8 +2,22 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
+/**
+ * @stored_procedure XMLFatture.usp_ConvalidaFattura
+ * @description Convalida dati fattura importata
 
-CREATE PROCEDURE [XMLFatture].[usp_ConvalidaFattura] (
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+ * @input_param @PKStaging_FatturaElettronicaHeader
+
+ * @output_param @PKEvento
+ * @output_param @PKEsitoEvento
+ * @output_param @IsValida
+ * @output_param @PKValidazione
+ * @output_param @PKFatturaElettronicaHeader
+*/
+
+CREATE   PROCEDURE [XMLFatture].[usp_ConvalidaFattura] (
 	@codiceNumerico BIGINT = NULL,
 	@codiceAlfanumerico NVARCHAR(40) = NULL,
 	@PKStaging_FatturaElettronicaHeader BIGINT,

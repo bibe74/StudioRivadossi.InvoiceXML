@@ -2,7 +2,19 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE PROCEDURE [XMLFatture].[ssp_GeneraXMLFatturaHeader] (
+
+/**
+ * @stored_procedure XMLFatture.ssp_GeneraXMLFatturaHeader
+ * @description Generazione file XML fattura convalidata - Header (procedura di sistema)
+
+ * @input_param @FatturaElettronicaHeader
+ * @input_param @PKEvento
+
+ * @output_param @PKEsitoEvento
+ * @output_param @XMLOutput
+*/
+
+CREATE   PROCEDURE [XMLFatture].[ssp_GeneraXMLFatturaHeader] (
 	@PKFatturaElettronicaHeader BIGINT,
 	@PKEvento BIGINT,
 	@PKEsitoEvento SMALLINT OUTPUT,
@@ -46,8 +58,8 @@ BEGIN
 			CASE WHEN FEH.CedentePrestatore_Sede_NumeroCivico = N'' THEN NULL ELSE FEH.CedentePrestatore_Sede_NumeroCivico END AS [CedentePrestatore/Sede/NumeroCivico],
 			FEH.CedentePrestatore_Sede_CAP AS [CedentePrestatore/Sede/CAP],
 			FEH.CedentePrestatore_Sede_Comune AS [CedentePrestatore/Sede/Comune],
-            CASE WHEN FEH.CedentePrestatore_Sede_Nazione = N'IT' AND LEN(LTRIM(RTRIM(COALESCE(FEH.CedentePrestatore_Sede_Provincia, N'')))) = 2 THEN FEH.CedentePrestatore_Sede_Provincia ELSE NULL END AS [CedentePrestatore/Sede/Provincia],
-            FEH.CedentePrestatore_Sede_Nazione AS [CedentePrestatore/Sede/Nazione],
+			CASE WHEN FEH.CedentePrestatore_Sede_Provincia = N'' THEN NULL ELSE FEH.CedentePrestatore_Sede_Provincia END AS [CedentePrestatore/Sede/Provincia],
+			FEH.CedentePrestatore_Sede_Nazione AS [CedentePrestatore/Sede/Nazione],
 			--FEH.CedentePrestatore_HasStabileOrganizzazione AS [CedentePrestatore/HasStabileOrganizzazione],
 			CASE WHEN (FEH.CedentePrestatore_HasStabileOrganizzazione = CAST(0 AS BIT) OR FEH.CedentePrestatore_StabileOrganizzazione_Indirizzo = N'') THEN NULL ELSE FEH.CedentePrestatore_StabileOrganizzazione_Indirizzo END AS [CedentePrestatore/StabileOrganizzazione/Indirizzo],
 			CASE WHEN (FEH.CedentePrestatore_HasStabileOrganizzazione = CAST(0 AS BIT) OR FEH.CedentePrestatore_StabileOrganizzazione_NumeroCivico = N'') THEN NULL ELSE FEH.CedentePrestatore_StabileOrganizzazione_NumeroCivico END AS [CedentePrestatore/StabileOrganizzazione/NumeroCivico],
@@ -90,7 +102,7 @@ BEGIN
 			CASE WHEN FEH.CessionarioCommittente_Sede_NumeroCivico = N'' THEN NULL ELSE FEH.CessionarioCommittente_Sede_NumeroCivico END AS [CessionarioCommittente/Sede/NumeroCivico],
 			FEH.CessionarioCommittente_Sede_CAP AS [CessionarioCommittente/Sede/CAP],
 			FEH.CessionarioCommittente_Sede_Comune AS [CessionarioCommittente/Sede/Comune],
-			CASE WHEN FEH.CessionarioCommittente_Sede_Nazione = N'IT' AND LEN(LTRIM(RTRIM(COALESCE(FEH.CessionarioCommittente_Sede_Provincia, N'')))) = 2 THEN FEH.CessionarioCommittente_Sede_Provincia ELSE NULL END AS [CessionarioCommittente/Sede/Provincia],
+			CASE WHEN FEH.CessionarioCommittente_Sede_Provincia = N'' THEN NULL ELSE FEH.CessionarioCommittente_Sede_Provincia END AS [CessionarioCommittente/Sede/Provincia],
 			FEH.CessionarioCommittente_Sede_Nazione AS [CessionarioCommittente/Sede/Nazione],
 			--FEH.CessionarioCommittente_HasStabileOrganizzazione AS [CessionarioCommittente/HasStabileOrganizzazione],
 			CASE WHEN (FEH.CessionarioCommittente_HasStabileOrganizzazione = CAST(0 AS BIT) OR FEH.CessionarioCommittente_StabileOrganizzazione_Indirizzo = N'') THEN NULL ELSE FEH.CessionarioCommittente_StabileOrganizzazione_Indirizzo END AS [CessionarioCommittente/StabileOrganizzazione/Indirizzo],

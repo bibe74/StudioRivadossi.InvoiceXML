@@ -3,7 +3,6 @@ GO
 SET ANSI_NULLS ON
 GO
 
-
 CREATE PROCEDURE [XMLAudit].[ssp_ConvalidaFatturaBody] (
 	@PKStaging_FatturaElettronicaHeader BIGINT,
 	@PKValidazione BIGINT
@@ -212,7 +211,7 @@ BEGIN
 
 	END;
 
-	IF (@DatiGenerali_DatiGeneraliDocumento_TipoDocumento IN ('TD04', 'TD16', 'TD17', 'TD18', 'TD19'))
+	IF (@DatiGenerali_DatiGeneraliDocumento_TipoDocumento = 'TD04')
 	BEGIN
 
 		DECLARE @DataPrimaFatturaCollegata DATE;

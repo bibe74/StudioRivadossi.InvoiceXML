@@ -3,7 +3,25 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE FUNCTION [XMLFatture].[sfn_VerificaFormaleCodiceFiscale] (
+/*
+SELECT XMLFatture.sfn_VerificaFormalePartitaIVA('0336642098');
+SELECT XMLFatture.sfn_VerificaFormalePartitaIVA('03366420986');
+SELECT XMLFatture.sfn_VerificaFormalePartitaIVA('03366920486');
+SELECT XMLFatture.sfn_VerificaFormalePartitaIVA('TRLLRT74B15D918W');
+GO
+*/
+
+/**
+ * @function XMLFatture.sfn_VerificaFormaleCodiceFiscale
+ * @description Verifica formale codice fiscale (funzione di sistema)
+
+ * @parameter @CodiceFiscale
+ * @parameter @CheckPartitaIVA (default 0)
+
+ * @returns BIT
+*/
+
+CREATE   FUNCTION [XMLFatture].[sfn_VerificaFormaleCodiceFiscale] (
 	@CodiceFiscale VARCHAR(16),
 	@CheckPartitaIVA BIT = 0
 )

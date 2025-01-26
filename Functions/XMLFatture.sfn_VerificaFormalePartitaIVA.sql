@@ -2,8 +2,16 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
+/**
+ * @function XMLFatture.sfn_VerificaFormalePartitaIVA
+ * @description Verifica formale partita IVA (funzione di sistema)
 
-CREATE FUNCTION [XMLFatture].[sfn_VerificaFormalePartitaIVA] (
+ * @param @PartitaIVA
+
+ * @returns BIT
+*/
+
+CREATE   FUNCTION [XMLFatture].[sfn_VerificaFormalePartitaIVA] (
 	@PartitaIVA VARCHAR(16)
 )
 RETURNS BIT

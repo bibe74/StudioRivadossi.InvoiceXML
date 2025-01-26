@@ -2,8 +2,19 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
+/**
+ * @stored_procedure XMLFatture.usp_ImportaFattura
+ * @description Importazione fattura da gestionale
 
-CREATE PROCEDURE [XMLFatture].[usp_ImportaFattura] (
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+
+ * @output_param @PKEvento
+ * @output_param @PKEsitoEvento
+ * @output_param @PKLanding_Fattura
+*/
+
+CREATE   PROCEDURE [XMLFatture].[usp_ImportaFattura] (
 	@codiceNumerico BIGINT = NULL,
 	@codiceAlfanumerico NVARCHAR(40) = NULL,
 	@PKEvento BIGINT OUTPUT,
