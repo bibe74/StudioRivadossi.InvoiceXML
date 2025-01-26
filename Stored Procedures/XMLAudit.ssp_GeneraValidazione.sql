@@ -3,7 +3,18 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [XMLAudit].[ssp_GeneraValidazione] (
+/**
+ * @stored_procedure XMLAudit.ssp_GeneraValidazione
+ * @description Generazione nuova validazione (procedura di sistema)
+
+ * @param_input @PKStaging_FatturaElettronicaHeader
+ * @param_input @PKEvento
+
+ * @param_output @PKValidazione
+
+*/
+
+CREATE   PROCEDURE [XMLAudit].[ssp_GeneraValidazione] (
 	@PKStaging_FatturaElettronicaHeader BIGINT,
 	@PKEvento BIGINT,
 	@PKValidazione BIGINT OUTPUT

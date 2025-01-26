@@ -3,7 +3,22 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [XMLAudit].[ssp_ScriviLogValidazione] (
+/**
+ * @stored_procedure XMLAudit.ssp_ScriviLogValidazione
+ * @description Scrittura riga di log Validazione (procedura di sistema)
+
+ * @param_input @PKValidazione
+ * @param_input @campo
+ * @param_input @valoreTesto
+ * @param_input @valoreIntero
+ * @param_input @valoreDecimale
+ * @param_input @valoreData
+ * @param_input @Messaggio
+ * @param_input @LivelloLog
+
+*/
+
+CREATE   PROCEDURE [XMLAudit].[ssp_ScriviLogValidazione] (
 	@PKValidazione BIGINT,
 	@campo NVARCHAR(100),
 	@valoreTesto NVARCHAR(100) = NULL,

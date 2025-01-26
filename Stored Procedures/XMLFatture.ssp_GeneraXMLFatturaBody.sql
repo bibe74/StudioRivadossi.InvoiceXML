@@ -106,19 +106,6 @@ BEGIN
 				FOR XML PATH ('DatiOrdineAcquisto'), TYPE
 			) AS [DatiGenerali],
 
-            -- FattureCollegate
-            (
-                SELECT
-                    DEFFOR.IdDocumento,
-                    DEFFOR.Data
-            
-                FROM XMLFatture.FatturaElettronicaBody_DocumentoEsterno DEFFOR
-            
-                WHERE DEFFOR.PKFatturaElettronicaBody = FEB.PKFatturaElettronicaBody
-                    AND DEFFOR.TipoDocumentoEsterno = 'FTCL'
-                FOR XML PATH ('DatiFattureCollegate'), TYPE
-            ) AS [DatiGenerali],
-
 			--N'%TODO%' AS [DatiGenerali/DatiSAL],
 
 			-- DatiDDT

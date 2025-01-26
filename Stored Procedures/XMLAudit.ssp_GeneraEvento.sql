@@ -3,7 +3,19 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [XMLAudit].[ssp_GeneraEvento] (
+/**
+ * @stored_procedure XMLAudit.ssp_GeneraEvento
+ * @description Generazione nuovo evento (procedura di sistema)
+
+ * @param_input @chiaveGestionale_CodiceNumerico
+ * @param_input @chiaveGestionale_CodiceAlfanumerico
+ * @param_input @storedProcedure
+
+ * @param_output @PKEvento
+
+*/
+
+CREATE   PROCEDURE [XMLAudit].[ssp_GeneraEvento] (
 	@chiaveGestionale_CodiceNumerico BIGINT = NULL,
 	@chiaveGestionale_CodiceAlfanumerico NVARCHAR(40) = NULL,
 	@storedProcedure sysname = NULL,

@@ -3,7 +3,28 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [XMLFatture].[ssp_VerificaParametriFattura] (
+/*
+SELECT XMLFatture.sfn_VerificaFormaleCodiceFiscale('03366420986', 0);
+SELECT XMLFatture.sfn_VerificaFormaleCodiceFiscale('03366420986', 1);
+SELECT XMLFatture.sfn_VerificaFormaleCodiceFiscale('TRLLRT74B15D918', 0);
+SELECT XMLFatture.sfn_VerificaFormaleCodiceFiscale('TRLLRT74B15D918W', 0);
+SELECT XMLFatture.sfn_VerificaFormaleCodiceFiscale('TRLLRT74B154918W', 0);
+GO
+*/
+
+/**
+ * @stored_procedure XMLFatture.ssp_VerificaParametriFattura
+ * @description Verifica parametri fattura (procedura di sistema)
+
+ * @input_param @sp_name
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+
+ * @output_param @PKEvento
+ * @output_param @PKEsitoEvento
+*/
+
+CREATE   PROCEDURE [XMLFatture].[ssp_VerificaParametriFattura] (
 	@sp_name sysname,
 	@codiceNumerico BIGINT = NULL,
 	@codiceAlfanumerico NVARCHAR(40) = NULL,

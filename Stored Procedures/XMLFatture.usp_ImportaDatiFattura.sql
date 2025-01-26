@@ -3,7 +3,20 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [XMLFatture].[usp_ImportaDatiFattura] (
+/**
+ * @stored_procedure XMLFatture.usp_ImportaDatiFattura
+ * @description Importazione dati fattura da gestionale
+
+ * @input_param @codiceNumerico
+ * @input_param @codiceAlfanumerico
+ * @input_param @PKLanding_Fattura
+ 
+ * @output_param @PKEvento
+ * @output_param @PKEsitoEvento
+ * @output_param @PKStaging_FatturaElettronicaHeader
+*/
+
+CREATE   PROCEDURE [XMLFatture].[usp_ImportaDatiFattura] (
 	@codiceNumerico BIGINT = NULL,
 	@codiceAlfanumerico NVARCHAR(40) = NULL,
 	@PKLanding_Fattura BIGINT,

@@ -3,7 +3,18 @@ GO
 SET ANSI_NULLS ON
 GO
 
-CREATE PROCEDURE [XMLFatture].[ssp_EsportaFatturaHeader] (
+/**
+ * @stored_procedure XMLFatture.ssp_EsportaFatturaHeader
+ * @description Esportazione fattura da tabelle di staging a tabelle "ufficiali" - Testata fattura
+
+ * @input_param @PKStaging_FatturaElettronicaHeader
+ * @input_param @PKFatturaElettronicaHeader
+ * @input_param @PKEvento
+
+ * @output_param @PKEsitoEvento
+*/
+
+CREATE   PROCEDURE [XMLFatture].[ssp_EsportaFatturaHeader] (
 	@PKStaging_FatturaElettronicaHeader BIGINT,
 	@PKFatturaElettronicaHeader BIGINT,
 	@PKEvento BIGINT,
